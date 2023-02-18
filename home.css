@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 5, 2023, 4:40:25 PM
+    Author     : Student
+*/
+
+body{
+    background-color:white;
+}
+p{
+    font-size: 30px;
+}
+
+.imagelogo{
+    border-radius: 50px;
+}
+.bLogin{
+    height: 50px;
+    width: 150px;
+    margin: 100px;
+    margin-top: 0px;
+    border-color: gray;
+}
+.tab{
+    float: left;
+    background-color: darkblue;
+    width:15%;
+    height: 600px;
+    border-color: gray;
+    border-width: 10px;
+}
+input{
+    width: 189px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 10px;
+}
+footer{
+    width: 100%;
+    background-color: steelblue;
+}
+.tbllogin{
+    margin-left: 100px;
+}
+
+.loginImg{
+    height: 150px;
+    width: 150px;
+    margin: 100px;
+    margin-bottom: 0px;
+    border-radius: 15px
+}
