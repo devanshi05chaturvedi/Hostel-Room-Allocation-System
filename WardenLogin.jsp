@@ -3,7 +3,7 @@
     Created on : 10 Jan, 2023, 4:39:53 PM
     Author     : chaar
 --%>
-
+<%@page import = "java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -41,32 +41,23 @@
         <table class="LoginTbl" align='right' bgcolor="darkblue" height="150px" width="100px">
             <tr>
             <td>
-                Warden's Name:
+                Username:
             </td>
             <td>
-            <input type="text" name="WardenName" value="" size="80" />
+            <input type="text" name="wardenid" value="" size="80" />
             </td>
            </tr>
            <tr>
                <td>
-                   Warden's ID:
+                   Password:
                </td>
            <td>
-               <input type="text" name="WardenID" value="" size="80" />
+               <input type="text" name="wardenpwd" value="" size="80" />
            </td>
-           </tr>
-           <tr>
-               <td>
-                   Hostel Name:
-               </td>
-               <td>
-                   <input type="text" name="HostelName" value="" size="80" />
-               </td>
            </tr>
         </table>
         </font>
         <table height='30%' width='10%'>
-    <%-- <table cellspacing='4' cellpadding='4' border='10' align='center' bgcolor='darkslateblue' height='30%'width='10%'>--%>
            <tr align='center' colspan='2'>
                <td>
                    <input class='loginBtn' type="submit" value="Login" name="WardenLogin" />
@@ -79,3 +70,33 @@
         created by
     </footer>
 </html>
+<%
+   if(request.getParameter("WardenLogin")!=null)
+    { 
+        try
+        {
+            String wardenid=request.getParameter("wardenid");
+            String wardenpwd=request.getParameter("wardenpwd");
+    //        out.print(uid);
+            String query="select * from warden where wardenid='"+wardenid+"' and wardenpwd='"+wardenpwd+"'";
+    //        +"' and pwd='"+pwd+"'"
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            Connection conn=DriverManager.getConnection("jdbc:derby://localhost:1527/hostel","hostel","hostel");
+            Statement stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery(query);
+            boolean status=rs.next();
+            if(status)
+            {
+                response.sendRedirect("WardenRedirect.jsp");
+            }
+            else
+            {
+                out.println("<script>alert('Invalid record')</script>");
+            }
+        }
+        catch(Exception ex)
+        {
+                ex.printStackTrace();
+        }
+    }
+%>
