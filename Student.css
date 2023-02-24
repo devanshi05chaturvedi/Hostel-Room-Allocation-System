@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13 Jan, 2023, 5:46:02 PM
+    Author     : chaar
+*/
+.studentImg{
+    margin-top: 60px;
+    margin-left: 120px;
+}
+.LoginTbl{
+    margin-top: 100px;
+    margin-right: 150px;
+    background-color: darkblue;
+}
+.tab{
+    float: left;
+    background-color: darkblue;
+    width:17%;
+    height: 600px;
+    border-color: gray;
+    border-width: 10px;
+}
+.SideTabBtn{
+    width: 189px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.loginBtn{
+    margin: 30px;
+    margin-left: 525px;
+    width: 189px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.loginBtn:hover{
+    background-color: lavender;
+}
+footer{
+    width: 100%;
+    background-color: steelblue;
+}
